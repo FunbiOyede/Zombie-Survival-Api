@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "redis": "^3.0.2",
+    "restify": "^8.5.1"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
