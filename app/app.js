@@ -9,4 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 routes(router);
 app.use('/api',router)
+app.get('/status',(req,res) =>{
+    
+})
 module.exports = app

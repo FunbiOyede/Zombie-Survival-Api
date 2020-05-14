@@ -1,8 +1,7 @@
 // const services = require('../services/index');
 const redis = require('redis')
 const client = redis.createClient();
-
-
+const locator = require('../util/locator');
 
 class SurvivorController{
 
@@ -14,11 +13,17 @@ class SurvivorController{
  */
     async createSurvivor(req,res){
         const {name,age,gender,inventory} = req.body
+        const {city,region,latitude,longitude} = await locator();
         client.HMSET (name,[
             'name',name,
             'age',age,
             'gender',gender,
-            'inventory',inventory
+            'inventory',inventory,
+            'city',city,
+            'regio',region,
+            'latitude',latitude,
+            'longitude',longitude
+            
         ],(err,value) =>{
             if(err){
                 res.status(400)
