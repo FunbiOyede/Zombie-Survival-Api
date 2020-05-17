@@ -11,13 +11,15 @@ exports.hashSet = (values) =>{
                 'gender',gender,
                 'inventory',inventory,
                 'latitude',latitude,
-                'longitude',longitude
+                'longitude',longitude,
+                'reportCount',0,
+                'infected',false
                 
-         ],(err,data) =>{
+         ],(err,reply) =>{
             if (err) {
                 reject(err);
               } else {
-                resolve(data);
+                resolve(reply);
               }
          })
      })
@@ -33,4 +35,22 @@ exports.hashGet = (value) =>{
               }
         })
     })
+}
+
+
+exports.hashUpdate = (name,values) =>{
+  const {latitude,longitude} = values
+     return new Promise((resolve,reject) =>{
+         client.hmset(name,[
+                'latitude',latitude,
+                'longitude',longitude
+                
+         ],(err,reply) =>{
+            if (err) {
+                reject(err);
+              } else {
+                resolve(reply);
+              }
+         })
+     })
 }
