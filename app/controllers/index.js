@@ -1,14 +1,11 @@
-// const services = require('../services/index');
-const redis = require('redis')
-const client = redis.createClient();
-// const {hashGet, hashSet, hashUpdate} = require('../util/hashUtil')
+
 const survivorService = require('../services/Survivor');
 class SurvivorController{
 
 /**
  * 
- * @param {Object} req 
- * @param {Object} res 
+ * @param {object} req 
+ * @param {object} res 
  * @description creates a new survivor
  */
     async createSurvivor(req,res){
@@ -25,9 +22,9 @@ class SurvivorController{
 
 /**
  * 
- * @param {Object} req 
- * @param {Object} res 
- * @description fetch a survivor
+ * @param {object} req 
+ * @param {object} res 
+ * @description fetch a survivor info
  */
     async getSurvivor(req,res){
         const {name} = req.params
@@ -40,6 +37,13 @@ class SurvivorController{
         }
     }
 
+
+    /**
+     * 
+     * @param {object} req 
+     * @param {object} res 
+     * @description updates survivors location
+     */
 
     async updateLocation(req,res){
         const {name} = req.params
@@ -55,11 +59,18 @@ class SurvivorController{
         
     }
 
+    /**
+     * 
+     * @param {object} req 
+     * @param {object} res 
+     * @description reports a particular survivor. E.g if there is a suspicion a survior is contaminated
+     * report of that of that person has to be made thrice to flag them infected
+     */
     async reportSurvivor(req,res){
        const {name} = req.body;
        try {
            const reply = await survivorService.report(name);
-           console.log("yeahd",reply)
+             res.status(201).json({message:'Thanks for reporting'})
        } catch (error) {
         res.status(400).json({message:error.message})
        }

@@ -4,6 +4,8 @@ const client = redis.createClient();
 
 class SurvivorServices{
 
+
+    
      create(values){
         const {name,age,gender,inventory,latitude,longitude} = values
         return new Promise((resolve,reject) =>{
