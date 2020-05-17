@@ -1,4 +1,4 @@
-## simple crud api for survivors in this corona period
+## simple crud api with nodejs and redis
 
 
 ## pre-requisite
