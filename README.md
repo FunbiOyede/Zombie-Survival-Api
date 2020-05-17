@@ -1,8 +1,21 @@
-# Zombie-Survival-Api
+## simple crud api for survivors in this corona period
 
 
-### Todo
+###  Prerequisite
+    * [Node.js](https://nodejs.org/en/)
+    * [redis](https://redis.io/)
 
- [x] Create Survivor( name, age, gender and last location (latitude, longitude),inventory)
- [x] Update survivor location
- [] Flag survivor as infected(ACL)
+### running the application locally
+ * Clone this repository
+
+    ```git clone https://github.com/FunbiOyede/zombie-survival.git```
+
+ * Install dependencies
+
+    ```cd file```
+
+    ```npm install or yarn```
+
+ * Start Application
+ 
+    ```npm run dev or yarn dev```
