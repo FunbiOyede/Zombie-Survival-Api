@@ -1,9 +1,10 @@
-## simple crud api for survivors in this corona period
+## simple crud api with nodejs and redis
 
 
-###  Prerequisite
-    * [Node.js](https://nodejs.org/en/)
-    * [redis](https://redis.io/)
+## pre-requisite
+ * install [Node.js](https://nodejs.org/en/).
+
+ * Install [redis](https://redis.io/)
 
 ### running the application locally
  * Clone this repository
