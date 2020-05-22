@@ -1,5 +1,4 @@
 const SurvivorController = require('../controllers/index');
-const report = require('../middlewares/reports');
 module.exports = (router) =>{
     const BASE_URL = '/survivor';
     router.route(`${BASE_URL}`).post(SurvivorController.createSurvivor)

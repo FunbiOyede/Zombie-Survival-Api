@@ -52,7 +52,7 @@ class SurvivorController{
                  res.status(201)
                  res.json({message:'location updated',status:reply})
          }catch (error) {
-            
+              
              res.status(400).json({message:error.message})
          }        
         
@@ -70,6 +70,7 @@ class SurvivorController{
        const {name} = req.body;
        try {
            const reply = await survivorService.report(name);
+           
              res.status(201).json({message:'Thanks for reporting'})
        } catch (error) {
         res.status(400).json({message:error.message})
